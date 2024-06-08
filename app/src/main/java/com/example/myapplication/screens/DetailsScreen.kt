@@ -35,6 +35,20 @@ import com.example.myapplication.ui.theme.MyApplicationTheme
 
 @Composable
 fun DetailsScreen(modifier: Modifier = Modifier) {
+
+    // Images val //
+    // banner-images
+    val bookmarkImage = painterResource(id = R.drawable.bookmark)
+    val backArrowImage = painterResource(id = R.drawable.backarrow)
+    // planet-image
+    val earthImage = painterResource(id = R.drawable.earth)
+    // rating-image
+    val starImage = painterResource(id = R.drawable.star)
+    // info-images
+    val rainDrop = painterResource(id = R.drawable.raindrop)
+    val tech = painterResource(id = R.drawable.tech)
+
+    // Details Screen //
     Column(
         modifier
             .fillMaxSize()
@@ -43,22 +57,15 @@ fun DetailsScreen(modifier: Modifier = Modifier) {
             .padding(horizontal = 24.dp)
     ) {
 
-        //Images val
-        val bookmarkImage = painterResource(id = R.drawable.bookmark)
-        val backArrowImage = painterResource(id = R.drawable.backarrow)
-        val earthImage = painterResource(id = R.drawable.earth)
-        val starImage = painterResource(id = R.drawable.star)
-        val rainDrop = painterResource(id = R.drawable.raindrop)
-        val tech = painterResource(id = R.drawable.tech)
+        // Banner Section //
 
-        //banner Section
         Row(
             modifier
                 .fillMaxWidth()
                 .height(80.dp),
             verticalAlignment = Alignment.CenterVertically
         ){
-            //Image
+            //image-back-arrow
             Image(
                 painter = backArrowImage,
                 contentDescription = "Back Arrow",
@@ -71,7 +78,7 @@ fun DetailsScreen(modifier: Modifier = Modifier) {
                 text = "Back",
                 color = Color.White
             )
-            //Image
+            //image-bookmark
             Box(modifier = Modifier.width(252.dp)){
                 Image(
                     painter = bookmarkImage,
@@ -83,7 +90,9 @@ fun DetailsScreen(modifier: Modifier = Modifier) {
                 )
             }
         }
-        //Planet Image Section
+
+        // Planet Image Section //
+
         Image(
             modifier = Modifier
                 .size(300.dp)
@@ -91,12 +100,11 @@ fun DetailsScreen(modifier: Modifier = Modifier) {
             painter = earthImage,
             contentDescription = "Planet"
         )
-        //Header Section
-        Row (
 
-        )
-        {
-            Column {
+        // Header Section //
+
+        Row {
+            Column {//Heading / Sub-heading
                 Text(
                     fontSize = 14.sp,
                     text = "Planet",
@@ -109,16 +117,18 @@ fun DetailsScreen(modifier: Modifier = Modifier) {
                     color = Color.White
                 )
             }
-            Column (
+
+            Column (//Review
                 Modifier.fillMaxWidth()
             ){
-                Row(
+                Row(//Rating
                     verticalAlignment = Alignment.CenterVertically
                 )
                 {
                     Spacer(
                         modifier = Modifier.width(62.dp)
                     )
+                    //image-star
                     Image(
                         modifier = Modifier.size(18.dp),
                         painter = starImage,
@@ -131,7 +141,7 @@ fun DetailsScreen(modifier: Modifier = Modifier) {
                         color = Color.White
                     )
                 }
-                Text(
+                Text(//total rating
                     modifier = Modifier.fillMaxWidth(),
                     fontSize = 10.sp,
                     textAlign = TextAlign.Right,
@@ -140,7 +150,9 @@ fun DetailsScreen(modifier: Modifier = Modifier) {
                 )
             }
         }
-        //Body Text Section
+
+        // Body Text Section //
+
         Text(
             fontSize = 12.sp,
             lineHeight = 12.sp,
@@ -155,7 +167,9 @@ fun DetailsScreen(modifier: Modifier = Modifier) {
                     "reverence, earning it the nickname \"The Blue Jewel\" of the solar system.",
             color = Color.White
         )
-        //Information Section
+
+        // Information Section //
+
         Row (
             Modifier
                 .fillMaxWidth()
@@ -170,7 +184,7 @@ fun DetailsScreen(modifier: Modifier = Modifier) {
                     .padding(15.dp),
                 verticalAlignment = Alignment.CenterVertically
             ){
-                Column (
+                Column (//Text Area
                     modifier = Modifier.width(110.dp),
                     verticalArrangement = Arrangement.SpaceEvenly
                 ){
@@ -186,6 +200,7 @@ fun DetailsScreen(modifier: Modifier = Modifier) {
                         color = Color.White
                     )
                 }
+                //image-rain-drop
                 Image(
                     modifier = Modifier.size(30.dp),
                     painter = rainDrop,
@@ -202,7 +217,7 @@ fun DetailsScreen(modifier: Modifier = Modifier) {
                     .padding(15.dp),
                 verticalAlignment = Alignment.CenterVertically
             ){
-                Column (
+                Column (// text area
                     modifier = Modifier.width(110.dp),
                     verticalArrangement = Arrangement.SpaceEvenly
                 ){
@@ -217,6 +232,7 @@ fun DetailsScreen(modifier: Modifier = Modifier) {
                         color = Color.White
                     )
                 }
+                //image-tech
                 Image(
                     modifier = Modifier.size(30.dp),
                     painter = tech,
@@ -224,7 +240,8 @@ fun DetailsScreen(modifier: Modifier = Modifier) {
                 )
             }
         }
-        //Additional Information Section
+
+        // Additional Information Section //
 
         Row (
             Modifier
@@ -233,9 +250,8 @@ fun DetailsScreen(modifier: Modifier = Modifier) {
                 .padding(15.dp)
                 .fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
-//            horizontalArrangement = Arrangement.SpaceEvenly
         ){
-            Column {
+            Column {// text area
                 Text(
                     text = "FACTS ABOUT EARTH",
                     color = Color.White
